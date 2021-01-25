@@ -1,0 +1,41 @@
+:root {
+    --primary-color: #3c3c3c;
+    --secondary-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* add style to header */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+/* end style to header */
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.container {
+    min-height: 48rem;
+}
+
+/* add style to footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+/* end style to footer */
