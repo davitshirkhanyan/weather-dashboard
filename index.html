@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Staatliches&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+</head>
+<body>
+
+    <!-- add header -->
+    <header class="jumbotron container-fluid text-center p-2">
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <!-- add main section -->
+    <main class="container fluid">
+        <div class="row">
+        <div class="col-md-4 bg-light card">
+            <h3 class="pt-2">Search for a City</h3>
+            <div class="input-group mb-2">
+                <input type="text" class="form-control">
+                <!-- add button for search -->
+            <button type="submit" class="btn btn-primary ml-1"><span class="oi oi-globe"></span></button>
+            </div>
+        </div>
+
+        <!-- add current list -->
+        <div class="col-md-7 card ml-5">
+            <div class="row">
+                <div class="col">
+                    <h1>City Name</h1>
+                    <p>Temprature:</p>
+                    <p>Humidity:</p>
+                    <p>Wind Speed:</p>
+                    <p class="bg-danger rounded py-2 px-2 text-white">UV Index:</p>
+                </div>
+            </div>
+
+            <!-- add future list -->
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>5 Day Forecast</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <footer class="mt-2 text-center p-2"> 
+        <h3>Made By Davit Shirkhanyan</h3>
+     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
