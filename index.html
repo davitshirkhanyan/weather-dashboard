@@ -19,9 +19,9 @@
     </header>
 
     <!-- add main section -->
-    <main class="container">
+    <main class="container col-md-12">
         <div class="row">
-        <div class="col-md-4 bg-light card">
+        <div class="col-md-3 ml-5 bg-light card">
             <h3 class="pt-2">Search for a City</h3>
             <div class="input-group mb-2">
                 <input type="text" class="form-control">
@@ -31,21 +31,22 @@
         </div>
 
         <!-- add current list -->
-        <div class="col-md-7 card ml-5">
+        <div class="col-md-8 ml-5">
             <div class="row">
-                <div class="col">
+                <div class="col-md-12 p-2 border rounded">
                     <h3>City Name</h3>
-                    <p>Temprature:</p>
-                    <p>Humidity:</p>
-                    <p>Wind Speed:</p>
+                    <p>Temprature: <span id="temp"></span></p>
+                    <p>Humidity: <span id="humidity"></span></p>
+                    <p>Wind Speed: <span id="windSpeed"></span></p>
                     <p class="bg-danger rounded py-2 px-2 text-white">UV Index:</p>
                 </div>
             </div>
 
             <!-- add future list -->
-            <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-12 mt-3">
+                    <div class="row">
                     <h3>5 Day Forecast</h3>
+                    </div>
                 </div>
             </div>
         </div>
