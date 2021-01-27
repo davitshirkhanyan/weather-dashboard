@@ -23,6 +23,18 @@ header {
 }
 /* end style to header */
 
+.fiveDayForecast {
+    background-color: #3939ff;
+    color:var(--secondary-color);
+    float: left;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    min-width: 150px;
+    padding: 10px;
+}
+
 h1,
 h2,
 h3 {
