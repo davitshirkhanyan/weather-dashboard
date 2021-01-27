@@ -1,10 +1,40 @@
+let theLastCity = false;
+
+
 // add function to search for cities
 $("#searchBtn").on("click", function() {
     let cityValue = $("input").val();
+    theLastCity = true;
     cityWeatherInfo(cityValue);
     $("input").val("");
 });
 
+// add function to get the last city in the list
+$("#cityList").on("click", "button", function(event) {
+        let cityValue = event.target.textContent;
+        theLastCity = false;
+        cityWeatherInfo(cityValue);
+});
+
+// add function to create buttons in the list
+let cityList = function (cityValue) {
+    let lastCity = false;
+    localStorage.setItem("lastCity", cityValue)
+    $(".cityList").each(function() {
+
+        if(cityValue === $(this).text()) {
+            lastCity = true;
+            return lastCity;
+        }
+    });
+    
+    if(!lastCity) {
+        let cityListEL = $("<button>");
+        cityListEL.text(cityValue);
+        cityListEL.attr("data-city", cityValue);
+        $("#cityList").append(cityListEL);
+    }
+};
 
 // add function to get the cities information
 let cityWeatherInfo = function(cityValue) {
@@ -20,6 +50,10 @@ let cityWeatherInfo = function(cityValue) {
             let lantitude = cityObj.coord.lat;
             let longitude = cityObj.coord.lon;
             
+            if(theLastCity){
+                cityList(cityName);
+            };
+
             $("#cityName").text(`${cityName} (${moment().format("L")})`);
             $("#cityName").append($("<img>").attr("src", `https://openweathermap.org/img/wn/${cityObj.weather[0].icon}@2x.png`));
             $("#temp").attr("class", "font-weight-normal").html(` ${cityObj.main.temp}&#176F`);
@@ -85,4 +119,5 @@ let fiveDayForecast = function(lantitude, longitude) {
     }));
 };
 
-
+cityWeatherInfo(localStorage.getItem("lastCity"));
+cityList(localStorage.getItem("lastCity"));
