@@ -21,11 +21,12 @@ let cityWeatherInfo = function(cityValue) {
             let longitude = cityObj.coord.lon;
             
             $("#cityName").text(`${cityName} (${moment().format("L")})`);
-            $("#cityName").append($("<img>").attr("src", "https://openweathermap.org/img/wn/" + cityObj.weather[0].icon + "@2x.png"));
+            $("#cityName").append($("<img>").attr("src", `https://openweathermap.org/img/wn/${cityObj.weather[0].icon}@2x.png`));
             $("#temp").attr("class", "font-weight-normal").html(` ${cityObj.main.temp}&#176F`);
             $("#humidity").attr("class", "font-weight-normal").text(` ${cityObj.main.humidity}%`);
             $("#windSpeed").attr("class", "font-weight-normal").text(` ${cityObj.wind.speed}MPH`);
             uvIndexInfo(lantitude, longitude);
+            fiveDayForecast(lantitude, longitude);
  } else if (cityValue === "") {
      alert("Please enter the name of the city");
  } else {
@@ -41,7 +42,7 @@ let uvIndexInfo = function(lantitude, longitude) {
     $.ajax({
         url: `https://api.openweathermap.org/data/2.5/uvi?lat=${lantitude}&lon=${longitude}&appid=${apiKey}`,
         method: "GET"
-    }).then((response) =>{
+    }).then((function(response) {
         let uvIndex = response.value;
     
         if(uvIndex <= 2) {
@@ -58,5 +59,30 @@ let uvIndexInfo = function(lantitude, longitude) {
         } else {
             $("#uvIndex").append("<span>").attr("class", "bg-info rounded p-1 text-light").text(`Extreme - ${uvIndex}`);
         }
-    });
+    }));
 };
+
+// add function to get five days info
+let fiveDayForecast = function(lantitude, longitude) {
+    $(".fiveDayForecast").remove();
+    let apiKey = "46c83042b2cdf276d685079cb38dbf65";
+    $.ajax({
+        url: `https://api.openweathermap.org/data/2.5/onecall?lat=${lantitude}&lon=${longitude}&units=imperial&exclude=current,minutely,hourly,alerts&appid=${apiKey}`,
+        method: "GET"
+    }).then((function(response) {
+        let fiveDay = response.daily;
+
+        for(let i = 1; i <= 5; i++) {
+            let fiveDayDiv = $("<div>").attr("class", "fiveDayForecast");
+            let date = String(moment().add(i, 'day').format('L'));
+
+            fiveDayDiv.append($("<h5>").text(date));
+            fiveDayDiv.append($("<img>").attr("src", `https://openweathermap.org/img/wn/${fiveDay[i].weather[0].icon}@2x.png`));
+            fiveDayDiv.append($("<p>").html(`Temp: ${fiveDay[i].temp.day}&#176F`));
+            fiveDayDiv.append($("<p>").html(`Humidity: ${fiveDay[i].humidity}%`));
+            $("#fiveDayForecast").append(fiveDayDiv);
+        }
+    }));
+};
+
+
