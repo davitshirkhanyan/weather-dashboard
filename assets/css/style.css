@@ -1,0 +1,57 @@
+:root {
+    --primary-color: #3c3c3c;
+    --secondary-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* add style to header */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+/* end style to header */
+
+.fiveDayForecast {
+    background-color: #3939ff;
+    color:var(--secondary-color);
+    float: left;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    min-width: 150px;
+    padding: 10px;
+}
+
+.very-high {
+    background-color: rgb(189, 57, 127);
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+}
+
+.container {
+    min-height: 48rem;
+}
+
+/* add style to footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+/* end style to footer */
