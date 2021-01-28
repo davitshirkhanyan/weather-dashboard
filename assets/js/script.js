@@ -61,8 +61,9 @@ let cityWeatherInfo = function(cityValue) {
             $("#windSpeed").attr("class", "font-weight-normal").text(` ${cityObj.wind.speed}MPH`);
             uvIndexInfo(lantitude, longitude);
             fiveDayForecast(lantitude, longitude);
- } else if (cityValue === "") {
+ } else if (cityValue === "" || cityValue === null) {
      alert("Please enter the name of the city");
+     return;
  } else {
     alert(`Error: The city ${cityValue} doesn't exist!`);
  }
