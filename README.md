@@ -1,5 +1,5 @@
 # Project Name
-### weather-dashboard
+### Weather Dashboard
 
 ## Description
 This app is a simple weather dashboard that allows the user to search for the city and get the weather information(tempreture, humidity, wind speed uv index). You can also view the weather information 5 day forecast. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
