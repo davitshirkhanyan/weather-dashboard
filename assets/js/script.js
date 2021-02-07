@@ -31,6 +31,7 @@ let cityList = function (cityValue) {
     if(!lastCity) {
         let cityListEL = $("<button>");
         cityListEL.text(cityValue);
+        cityListEL.attr("class", "btn btn-secondary border cityList")
         cityListEL.attr("data-city", cityValue);
         $("#cityList").append(cityListEL);
     }
