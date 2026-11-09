@@ -2,12 +2,12 @@
 ### Weather Dashboard
 
 ## Description
-This app is a simple weather dashboard that allows the user to search for the city and get the weather information(tempreture, humidity, wind speed uv index). You can also view the weather information 5 day forecast. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+This app is a simple weather dashboard that allows the user to search for the city and get the weather information(temperature, humidity, wind speed). You can also view the weather information 5 day forecast. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 **Instructions:**
 * You can search for a city
 * You can view current weather conditions for that city
-* It was presented the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+* It was presented the city name, the date, an icon representation of weather conditions, the temperature, the humidity, and the wind speed
 * It was presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
 * You can view the city in the search history
 
