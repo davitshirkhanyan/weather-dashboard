@@ -23,12 +23,12 @@
         <div class="row">
         <div class="col-md-3 ml-5 bg-light card">
             <h3 class="pt-2">Search for a City</h3>
-            <div class="input-group mb-2">
-                <input type="text" placeholder="Please enter the name of the city" class="form-control">
+            <form id="searchForm" class="input-group mb-2">
+                <input id="cityInput" type="text" placeholder="Please enter the name of the city" class="form-control" aria-label="City name">
                 <!-- add button for search -->
-            <button type="submit" id="searchBtn" class="btn btn-primary ml-1"><span class="oi oi-globe"></span></button>
-            <div id="cityList" class="btn-group-vertical btn-block mt-2"></div>
-            </div>
+                <button type="submit" id="searchBtn" class="btn btn-primary ml-1" aria-label="Search"><span class="oi oi-globe"></span></button>
+            </form>
+            <div id="cityList" class="btn-group-vertical btn-block mb-2"></div>
         </div>
 
         <!-- add current list -->
@@ -39,7 +39,6 @@
                     <p class="font-weight-bold">Temperature: <span id="temp"></span></p>
                     <p class="font-weight-bold">Humidity: <span id="humidity"></span></p>
                     <p class="font-weight-bold">Wind Speed: <span id="windSpeed"></span></p>
-                    <p class="font-weight-bold">UV Index: <span id="uvIndex"></span></p>
                 </div>
             </div>
 
@@ -54,7 +53,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </main>
 
     <footer class="text-center p-2"> 
